@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Solo Project Podcast Demo</title>
+
+</head>
+<body>
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-12 col-md-10">
+                    <h3>Podcast Demo: Persuasions of Comfort</h3>
+                    <p>Nahum had this idea to create an environment where interesting individuals could join him in constructive dialogue to share stories, experiences, and drop gems of wisdom.</p>
+                </div>
+                <div class="col-12 col-sm align-self-center">
+                    <img src="#" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row row-content">
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="card" style="width: 30rem;">
+                    <div class="card-img">
+             
+                    </div>
+                    <div class="card-body">
+             
+                    </div>
+                </div>
+            </div>
+
+            <!--podcast form-->
+            <div class="col-12 col-sm-12 col-md-6">
+                <form id="first">
+                    <div class="form-group row">
+                        <label for="title" class="col-md-2 col-form-label">Title</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="episode" class="col-md-2 col-form-label">Episode</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="episode" name="episode" placeholder="Episode">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="date" class="col-md-2 col-form-label">Date</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="date" name="date" placeholder="Date">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="image" class="col-md-2 col-form-label">Image</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="image" name="image" placeholder="Image">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="description" class="col-md-2 col-form-label">Description</label>
+                        <div class="offset-md-1 col-md-7">
+                            <textarea class="form-control" id="description" name="description" rows="8"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-md-2 col-4 col-md-10">
+                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--podcast form-->
+
+        </div>
+    </div> 
+
+    <div class="container" style="padding-bottom: 20px">
+        <div class="row row-content" id="pod-list" style="padding-bottom: 20px">
+            <div id="main" style="padding-bottom: 20px">
+                
+            </div>
+        </div>
+    </div>
+
+    <!--Topics form-->
+    <div class="container">
+        <div class="row row-content">
+            <div class="col-12 col-sm-6 col-md-6">
+                <form id="second">
+                    <div class="form-group row">
+                        <label for="name" class="col-md-2 col-form-label">Name</label>
+                        <div class="col-md-8">
+                            <input type="text" id="name" name="name" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="topic" class="col-md-2 col-form-label">Topic</label>
+                        <div class="col-md-8">
+                            <input type="text"  id="topic" name="topic" placeholder="Topic Idea">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="feedback" class="col-md-2 col-form-label">Speak</label>
+                        <div class="col-md-8">
+                            <textarea class="form-control" id="feedback" name="feedback" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-md-2 col-4 col-md-10">
+                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6">
+                <div>
+                    <h4>List of Topics</h4>
+                    <ul id="topic-list">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+ <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+ <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+ <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+ <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+ <script defer src="./scripts.js"></script>
+</html>
+
+
+
+
+
+<!-- <div class="container">
+    <div class="row row-content">
+        <div class="col-12 col-sm-12 col-md-10">
+            <div class="media">
+                <img class="d-flex mr-3 img-thumbnail align-self-center"
+                src="https://specials-images.forbesimg.com/imageserve/1128096635/960x0.jpg?fit=scale" alt="Podcast" width="200px" height="200px">
+                <div class="media-body" id="addContent">
+                    <h4 id="who"> </h4>
+                    <p>January 22, 2021</p>
+                    <p>Time is not always on our side. Often we find ourselves trying to figure out where the time goes when the day slips out of our control. When we do not have control of our time, our level of productivity decreases causing us to lose focus and miss deadlines. Not only do we need time and discipline to break bad habits but we also need tools that can help us replace bad habits with better ones.  I share 7 methods I use daily to maintain a level of productivity and take back control of my time. 
+                    </p>
+                    <button>Read More</button>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div> -->

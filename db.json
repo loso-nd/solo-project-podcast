@@ -1,0 +1,40 @@
+{
+  "podcast": [
+    {
+      "id": 1,
+      "episode": 3,
+      "title": "The Beauty in Vulnerability",
+      "imageURL": "https://specials-images.forbesimg.com/imageserve/1128096635/960x0.jpg?fit=scale",
+      "description": "Time is not always on our side. Often we find ourselves trying to figure out where the time goes when the day slips out of our control. When we do not have control of our time, our level of productivity decreases causing us to lose focus and miss deadlines. Not only do we need time and discipline to break bad habits but we also need tools that can help us replace bad habits with better ones.  I share 7 methods I use daily to maintain a level of productivity and take back control of my time.",
+      "date": "February 22, 2021"
+    },
+    {
+      "title": "Black History Moment : Black Women Leaders",
+      "date": "March 3, 2021",
+      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUWWvbqwmY7fwMuNo6uLxtWNcOlbrgAvLU6w&usqp=CAU",
+      "id": 2
+    }
+  ],
+  "topic": [
+    {
+      "id": 1,
+      "name": "the host",
+      "topic": "The Beauty in Vulnerability"
+    },
+    {
+      "name": "Still behind again",
+      "topic": "NOw",
+      "id": 2
+    },
+    {
+      "name": "Host",
+      "topic": "We in there",
+      "id": 3
+    },
+    {
+      "name": "Almost there",
+      "topic": "Finance",
+      "id": 4
+    }
+  ]
+}
