@@ -1,10 +1,13 @@
+
+
+
   
 function getEpisode(){
     fetch('http://localhost:3000/podcast')
     .then(r => r.json())
     .then(episodes => //buildEpisode(episodes))
             {
-        episodes.forEach(episode => buildEpisode(episode))
+        episodes.forEach(episode => addEpisode(episode))
     })
 }
 getEpisode()
@@ -12,7 +15,8 @@ getEpisode()
 function buildEpisode(episode){
     const div1 = document.querySelector('.card-body')
     const div2 = document.querySelector('.card-img')
-    const h6 = document.createElement('h5')
+    let  div3 = document.querySelector('.card')
+    const h6 = document.createElement('h6')
     const img = document.createElement('img')
     const p1 = document.createElement('p')
     const p2 = document.createElement('p')
@@ -23,25 +27,15 @@ function buildEpisode(episode){
     img.src = episode.imageURL
     img.style.width= "30rem"
   
-
-    // imgCont.innerHTML = `
-    // <div class="media">
-    // <img class="d-flex mr-3 img-thumbnail align-self-center" 
-    // src="${episode.imageURL}" alt="Podcast" width="200px" height="200px">
-    // <div class="media-body">
-    //     <h4>${episode.title}</h4>
-    //     <p>${episode.description}</p>
-    //     <p>${episode.date}</p>
-
-    // </div>`
     div2.appendChild(img)
     div1.append( h6, p1, p2) 
+    div3.append(div2, div1)
 
     //imgContainer.append(img,h4 )
 
 }
-const formOne = document.querySelector('#first')
 
+const formOne = document.querySelector('#first')
 
 formOne.addEventListener("submit", (e) => {
     console.log(e)
@@ -68,9 +62,7 @@ formOne.addEventListener("submit", (e) => {
 }) 
 
 function addEpisode(episode){
-    console.log(episode)
-
-    const container = document.getElementById('pod-list')
+    //console.log(episode)
     const div = document.getElementById('main');
     const h6 = document.createElement('h6')
     const img = document.createElement('img')
@@ -83,16 +75,20 @@ function addEpisode(episode){
     p1.textContent = episode.date
     p2.textContent = episode.description
     img.src = episode.imageURL
-    img.className = "toy-avatar"
     img.style.padding = "35px"
     btn.textContent = "Delete"
-    btn.innerHTML = "Delete"
+  
 
     div.append(h6, p1, p2, img, btn)
   
 }
 
 
+
+
+
+
+//fecth for topics from db
 function getTopic(){
     fetch('http://localhost:3000/topic')
     .then(r => r.json())
@@ -100,19 +96,19 @@ function getTopic(){
             {
         topics.forEach(topic => addTopic(topic))
     })
-}
-getTopic()
-
-
-
-const formTwo = document.querySelector('#second')
-
-
-formTwo.addEventListener("submit", (e) => {
+  }
+  getTopic()
+  
+  
+  
+  const formTwo = document.querySelector('#second')
+  
+  
+  formTwo.addEventListener("submit", (e) => {
     console.log(e)
     e.preventDefault()
-
-
+  
+  
     //console.log(newTopic)
     fetch("http://localhost:3000/topic", {
         method: "POST",
@@ -129,12 +125,37 @@ formTwo.addEventListener("submit", (e) => {
         console.log(newTopic)
             addTopic(newTopic)
     })
-})  
-
-function addTopic(newTopic){
-    console.log(newTopic)
+  })  
+  
+  function addTopic(newTopic){
+     // debugger
+        console.log(newTopic)
     const ul = document.getElementById('topic-list')
     const li = document.createElement('li')
-    li.textContent = newTopic.name
-    ul.appendChild(li)
-}
+    const deleteBtn = document.createElement('button')
+  
+  
+    li.textContent = newTopic.topic
+      deleteBtn.textContent = "X"
+  
+  
+        li.appendChild(deleteBtn)
+      ul.appendChild(li)
+     
+     
+     
+      deleteBtn.addEventListener('click', () => {
+        li.remove()
+        
+        fetch(`http://localhost:3000/topic/${newTopic.id}`, {
+            method: 'DELETE',
+          })
+          .then(res => res.json())
+          .then(topics =>console.log(topics))
+
+    })
+    
+  
+  }
+
+

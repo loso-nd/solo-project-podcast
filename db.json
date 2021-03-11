@@ -17,24 +17,9 @@
   ],
   "topic": [
     {
-      "id": 1,
-      "name": "the host",
-      "topic": "The Beauty in Vulnerability"
-    },
-    {
-      "name": "Still behind again",
-      "topic": "NOw",
+      "name": "Jessie",
+      "topic": "Social Media",
       "id": 2
-    },
-    {
-      "name": "Host",
-      "topic": "We in there",
-      "id": 3
-    },
-    {
-      "name": "Almost there",
-      "topic": "Finance",
-      "id": 4
     }
   ]
 }

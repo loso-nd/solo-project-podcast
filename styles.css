@@ -17,29 +17,11 @@
     min-height:400px;
 }
   
-  
- /* #main{
-    text-align: center;
-    border: grey solid 1px;
-    padding: 1rem;
-    width: 15rem;
-    height: 25rem;
-    display: inline-grid;
-    margin: 1rem 2rem;
-    box-shadow: 3px 4px #e04b52
-  }
-  
-  .toy-avatar {
-    justify-self: center;
-    height: 4rem;
-    width: auto;
-  } */
-  
-  /* #container {
-    padding: 1rem;
-    width: stretch;
-    height: auto;
-    display: none;
-    background: #515DA2;
-    opacity: .8;
-  } */
+button {
+    margin-left: 5px;
+    width:min-content;
+}
+
+li {
+    padding: 10px;
+}
