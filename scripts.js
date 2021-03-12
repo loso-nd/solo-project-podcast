@@ -147,7 +147,8 @@ formTwo.addEventListener("submit", (e) => {
         },
         body: JSON.stringify({
             name: e.target.name.value,
-            topic: e.target.topic.value
+            topic: e.target.topic.value,
+            comments: e.target.comments.value
         })
     })
     .then(response => response.json())
@@ -164,7 +165,9 @@ function addTopic(newTopic){
      // debugger
         console.log(newTopic)
     const ul = document.getElementById('topic-list')
+    const div = document.getElementById('comments')
     const li = document.createElement('li')
+    const p = document.createElement('li')
     const deleteBtn = document.createElement('button')
   
   
@@ -175,6 +178,7 @@ function addTopic(newTopic){
   
     li.appendChild(deleteBtn)
     ul.appendChild(li)
+    div.appendChild(p)
      
      
      
