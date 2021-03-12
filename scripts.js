@@ -1,4 +1,5 @@
- function getEpisode(){
+function getEpisode(){
+     //debugger
     fetch('http://localhost:3000/podcast')
     .then(resp => resp.json())
     .then(episodes => //buildEpisode(episodes))
@@ -55,7 +56,7 @@ formOne.addEventListener("submit", (e) => {
 }) 
 
 function addEpisode(episode){
-    //console.log(episode)
+    console.log(episode)
     const div = document.getElementById('main');
     const h6 = document.createElement('h6')
     const img = document.createElement('img')
@@ -83,10 +84,29 @@ function addEpisode(episode){
     div.append(h6, p1, p2, img, btn1, btn2)
 
 
+    btn1.addEventListener('click', () => {
+        console.log("Are you there")
+        img.remove()
+        h6.remove()
+        p2.remove()
+        p1.remove()
+        btn2.remove()
+        btn.remove()
+            
+        fetch(`http://localhost:3000/podcast/${episode.id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())
+            .then(removeEpisode => console.log(removeEpisode))
+    
+    })
 
     btn.addEventListener('click', () => {
-        if(btn.innerHTML == "Show More"){
-            btn.innerHTML == "Show Less"
+        if (btn.innerHTML == "Show More"){
+            btn.innerHTML = "Show Less"
+        }
+        else {
+            pauseBtn.innerHTML = "Show More"
         }
     })
 }
@@ -103,8 +123,7 @@ function getTopic(){
 }
 getTopic()
   
-  
-  
+//Grabbing the form associated with the second form. 
 const formTwo = document.querySelector('#second') 
 
 formTwo.addEventListener("submit", (e) => {
