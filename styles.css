@@ -27,14 +27,12 @@ li {
 }
 
 #main #description {    
-  /* border: 1px solid black;
-  width: 305px; 
-  white-space: nowrap;
+  white-space: normal ;
   word-wrap: normal;
-  height: 200px;
-  overflow: hidden; */
-  background-color:azure;
+  overflow: hidden;
+  background-color:rgb(213, 207, 226);
   text-overflow: ellipsis;
+  padding: 5px;
 }
 
 #logo {

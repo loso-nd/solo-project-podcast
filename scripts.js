@@ -62,21 +62,23 @@ function addEpisode(episode){
     const img = document.createElement('img')
     const p1 = document.createElement('p')
     const p2 = document.createElement('p')
-    const p3 = document.createElement('p')
     const btn = document.createElement('button')
     const btn1 = document.createElement('button')
     const btn2 = document.createElement('button')
   
     h6.textContent = `Episode ${episode.episode} - ${episode.title}`
     p1.textContent = `Published: ${episode.date}`
-    p2.textContent = episode.description.substring(0, 250)
+    p2.textContent = `${episode.description.substring(0, 250) + "..."}`
     p2.id = "description"
+    p2.classList = "rounded"
     img.src = episode.imageURL
     img.style.width = "15rem"
     img.style.marginBottom = "30px"
     img.classList = "rounded"
     btn.textContent = "Show More"
     btn.style.width ="150px"
+    btn.style.marginLeft= "5px"
+    btn.classList = "rounded border border-light"
     btn1.textContent = "Delete"
     btn1.className= "btn btn-primary"
     btn2.textContent = "Subscribe"
@@ -111,7 +113,7 @@ function addEpisode(episode){
         }
         else {
             btn.innerHTML = "Show More"
-            p2.textContent = episode.description.substring(0, 250)
+            p2.textContent = `${episode.description.substring(0, 250) + "..."}`
             p2.append(btn)
         }
     })
@@ -168,6 +170,7 @@ function addTopic(newTopic){
   
     li.textContent = newTopic.topic
     deleteBtn.textContent = "X"
+    deleteBtn.classList = "rounded border border-warning"
   
   
     li.appendChild(deleteBtn)
