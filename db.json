@@ -9,24 +9,5 @@
       "date": "February 22, 2021"
     }
   ],
-  "topic": [
-    {
-      "name": "mojo",
-      "topic": "Finance",
-      "comments": "Nice",
-      "id": 3
-    },
-    {
-      "name": "Jessie",
-      "topic": "Dating",
-      "comments": "Nice",
-      "id": 4
-    },
-    {
-      "name": "Still behind again",
-      "topic": "Social Media",
-      "comments": "no",
-      "id": 5
-    }
-  ]
+  "topic": []
 }

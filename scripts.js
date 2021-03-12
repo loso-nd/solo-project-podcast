@@ -165,17 +165,20 @@ function addTopic(newTopic){
      // debugger
         console.log(newTopic)
     const ul = document.getElementById('topic-list')
-    const div = document.getElementById('comments')
+    const div = document.getElementById('comment-list')
     const li = document.createElement('li')
-    const p = document.createElement('li')
+    const p = document.createElement('p')
     const deleteBtn = document.createElement('button')
   
   
     li.textContent = newTopic.topic
+    p.textContent = newTopic.comments
+    p.style.
     deleteBtn.textContent = "X"
     deleteBtn.classList = "rounded border border-warning"
   
-  
+  //debugger
+  console.log(p)
     li.appendChild(deleteBtn)
     ul.appendChild(li)
     div.appendChild(p)
@@ -184,6 +187,7 @@ function addTopic(newTopic){
      
     deleteBtn.addEventListener('click', () => {
     li.remove()
+    p.remove()
         
     fetch(`http://localhost:3000/topic/${newTopic.id}`, {
         method: 'DELETE',
