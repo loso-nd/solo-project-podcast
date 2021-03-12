@@ -25,3 +25,12 @@ button {
 li {
     padding: 10px;
 }
+
+#main #description {    
+    border: 1px solid black;
+    background-color: rgb(202, 211, 214);
+    width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -26,27 +26,16 @@
     </header>
 
     <div class="container">
-        <div class="row row-content">
-            <!-- <div class="col-12 col-sm-12 col-md-6">
-                <div class="card" style="width: 30rem;">
-                    <div class="card-img">
-             
-                    </div>
-                    <div class="card-body">
-             
-                    </div>
+        <div class="row row-content" id="pod-list">
+            <div class="col-12 col-sm-12 col-md-7">
+                <div id="main" style="margin: 20px">
+                
                 </div>
-            </div> -->
-
-
-            <div class="col-12 col-sm-12 col-md-6">
-                <div id="main" style="width: 30rem;">
-
-                </div>
-
+            </div>
+            <div class="d-none d-sm-none col-md-3">.
             </div>
             <!--podcast form-->
-            <div class="col-12 col-sm-12 col-md-6">
+            <div class="col-12 col-sm-12 col-md-5">
                 <form id="first">
                     <div class="form-group row">
                         <label for="title" class="col-md-2 col-form-label">Title</label>
@@ -90,14 +79,6 @@
         </div>
     </div> 
 
-    <div class="container" style="padding-bottom: 20px">
-        <div class="row row-content" id="pod-list" style="padding-bottom: 20px">
-            <div id="main" style="padding-bottom: 20px">
-                
-            </div>
-        </div>
-    </div>
-
     <!--Topics form-->
     <div class="container">
         <div class="row row-content">
@@ -138,8 +119,7 @@
             </div>
         </div>
     </div>
-    <!--Topics form-->
-
+    
 </body>
  <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
@@ -169,3 +149,50 @@
         </div>
     </div>
 </div> -->
+
+
+
+
+function BuildTimerStop() {
+    const pauseBtn = document.getElementById("pause"); 
+
+    pauseBtn.addEventListener("click", () => {
+        //if pauseBtn = resume then I want to resume the timer
+        //else pause the time
+        const increment = document.getElementById('plus');
+        increment.disabled = true;
+
+        if (pauseBtn.innerHTML == "resume"){
+            pauseBtn.innerHTML = "pause"
+            setUpTimer();
+
+            const increment = document.getElementById('plus');
+            increment.disabled = false;
+
+        }
+        else {
+            clearInterval(myInterval)
+            pauseBtn.innerHTML = "resume"
+        }
+//debugger
+        
+        //const exampleAttr= increment.getAttribute('disabled');
+        
+        console.log("Still not working")
+    })
+ }
+BuildTimerStop()
+
+document.addEventListener("DOMContentLoaded", () => {
+    const addBtn = document.querySelector("#new-toy-btn");
+    const toyFormContainer = document.querySelector(".container");
+  
+    addBtn.addEventListener("click", () => {
+      // hide & seek with the form
+      addToy = !addToy;
+      if (addToy) {
+        toyFormContainer.style.display = "block";
+      } else {
+        toyFormContainer.style.display = "none";
+      }
+    });

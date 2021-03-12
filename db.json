@@ -9,17 +9,27 @@
       "date": "February 22, 2021"
     },
     {
-      "title": "Black History Moment : Black Women Leaders",
+      "title": "FEM | Single Price Grid Component Coding Challenge (BS, CSS, HTML)",
+      "episode": "2",
       "date": "March 3, 2021",
       "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUWWvbqwmY7fwMuNo6uLxtWNcOlbrgAvLU6w&usqp=CAU",
+      "description": "23",
       "id": 2
+    },
+    {
+      "title": "Testing",
+      "episode": "2",
+      "date": "March 3, 2021",
+      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUWWvbqwmY7fwMuNo6uLxtWNcOlbrgAvLU6w&usqp=CAU",
+      "description": "come on",
+      "id": 3
     }
   ],
   "topic": [
     {
-      "name": "Jessie",
-      "topic": "Social Media",
-      "id": 2
+      "name": "mojo",
+      "topic": "Finance",
+      "id": 3
     }
   ]
 }
