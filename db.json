@@ -9,5 +9,12 @@
       "date": "February 22, 2021"
     }
   ],
-  "topic": []
+  "topic": [
+    {
+      "name": "Jessie",
+      "topic": "Finance",
+      "comments": "Nice",
+      "id": 1
+    }
+  ]
 }

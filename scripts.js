@@ -96,6 +96,7 @@ function addEpisode(episode){
         p1.remove()
         btn2.remove()
         btn.remove()
+        btn1.remove()
             
         fetch(`http://localhost:3000/podcast/${episode.id}`, {
             method: 'DELETE',
@@ -173,15 +174,15 @@ function addTopic(newTopic){
   
     li.textContent = newTopic.topic
     p.textContent = newTopic.comments
-    p.style.
+    p.style.fontStyle = "italic"
     deleteBtn.textContent = "X"
     deleteBtn.classList = "rounded border border-warning"
   
   //debugger
   console.log(p)
     li.appendChild(deleteBtn)
-    ul.appendChild(li)
-    div.appendChild(p)
+    ul.appendChild(li, p)
+   // div.appendChild(p)
      
      
      
