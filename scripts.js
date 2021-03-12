@@ -62,18 +62,20 @@ function addEpisode(episode){
     const img = document.createElement('img')
     const p1 = document.createElement('p')
     const p2 = document.createElement('p')
+    const p3 = document.createElement('p')
     const btn = document.createElement('button')
     const btn1 = document.createElement('button')
     const btn2 = document.createElement('button')
   
     h6.textContent = `Episode ${episode.episode} - ${episode.title}`
-    p1.textContent = episode.date
-    p2.textContent = episode.description
+    p1.textContent = `Published: ${episode.date}`
+    p2.textContent = episode.description.substring(0, 250)
     p2.id = "description"
     img.src = episode.imageURL
     img.style.width = "15rem"
     img.style.marginBottom = "30px"
-    btn.textContent = "Read More"
+    img.classList = "rounded"
+    btn.textContent = "Show More"
     btn.style.width ="150px"
     btn1.textContent = "Delete"
     btn1.className= "btn btn-primary"
@@ -104,9 +106,13 @@ function addEpisode(episode){
     btn.addEventListener('click', () => {
         if (btn.innerHTML == "Show More"){
             btn.innerHTML = "Show Less"
+            p2.textContent = episode.description
+            p2.append(btn)
         }
         else {
-            pauseBtn.innerHTML = "Show More"
+            btn.innerHTML = "Show More"
+            p2.textContent = episode.description.substring(0, 250)
+            p2.append(btn)
         }
     })
 }
