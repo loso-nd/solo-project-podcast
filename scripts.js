@@ -1,34 +1,17 @@
+//How we get a list of episodes with fetch [CRUD]
+
 function getEpisode(){
      //debugger
     fetch('http://localhost:3000/podcast')
     .then(resp => resp.json())
-    .then(episodes => //buildEpisode(episodes))
+    .then(episodes => 
             {
         episodes.forEach(episode => addEpisode(episode))
     })
 }
 getEpisode()
 
-// function buildEpisode(episode){
-//     const div1 = document.querySelector('.card-body')
-//     const div2 = document.querySelector('.card-img')
-//     const div3 = document.querySelector('.card')
-//     const h6 = document.createElement('h6')
-//     const img = document.createElement('img')
-//     const p1 = document.createElement('p')
-//     const p2 = document.createElement('p')
-
-//     h6.textContent = `${episode.episode} - ${episode.title}`
-//     p1.textContent = episode.date
-//     p2.textContent = episode.description
-//     img.src = episode.imageURL
-//     img.style.width= "30rem"
-  
-//     div2.appendChild(img)
-//     div1.append( h6, p1, p2) 
-//     div3.append(div2, div1)
-// }
-
+//Grab the podcast form, add e.listener, fetch POST [CRUD]
 const formOne = document.querySelector('#first')
 
 formOne.addEventListener("submit", (e) => {
@@ -55,6 +38,8 @@ formOne.addEventListener("submit", (e) => {
     })
 }) 
 
+//DOM Manipulation
+//add e.listener(2), fetch DELETE [CRUD]
 function addEpisode(episode){
     console.log(episode)
     const div = document.getElementById('main');
@@ -160,8 +145,7 @@ formTwo.addEventListener("submit", (e) => {
     })  
   
 //DOM Manipulation
-//Function adds & and deletes topics to and from the list  ( CRU[D] )
-
+//Append to the DOM & fetch DELETE topics to and from the list  ( CRU[D] )
 function addTopic(newTopic){
      // debugger
         console.log(newTopic)
@@ -173,7 +157,7 @@ function addTopic(newTopic){
   
   
     li.textContent = newTopic.topic
-    p.textContent = newTopic.comments
+    p.textContent = `${newTopic.name} - "${newTopic.comments}"`
     p.style.fontStyle = "italic"
     deleteBtn.textContent = "X"
     deleteBtn.classList = "rounded border border-warning"
@@ -181,7 +165,7 @@ function addTopic(newTopic){
   //debugger
   console.log(p)
     li.appendChild(deleteBtn)
-    ul.appendChild(li, p)
+    ul.append(li, p)
    // div.appendChild(p)
      
      
